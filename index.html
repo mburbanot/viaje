@@ -297,7 +297,7 @@
 <div class="toast" id="toast">✓ Guardado</div>
 
 <script>
-const STORE = 'viaje_milan_v5';
+const STORE = 'viaje_milan_v6';
 let saveTimer;
 
 /* ─── NAV ─── */
@@ -339,15 +339,19 @@ function cards() { return Array.from(document.querySelectorAll('#dias .day-card'
 function movableCards() { return cards().filter(c => !c.classList.contains('fixed-card')); }
 
 function saveAll() {
-  const data = {};
-  document.querySelectorAll('[data-key]').forEach(el => { data[el.dataset.key] = el.innerHTML; });
-  data['__order'] = JSON.stringify(movableCards().map(c => ({
-    meta: c.querySelector('.day-meta').innerHTML,
-    acts: c.querySelector('.activities').innerHTML,
-    tip:  c.querySelector('.tip') ? c.querySelector('.tip').innerHTML : null
-  })));
-  localStorage.setItem(STORE, JSON.stringify(data));
-  showToast('✓ Guardado');
+  try {
+    const data = {};
+    // Save all named fields
+    document.querySelectorAll('[data-key]').forEach(el => {
+      data[el.dataset.key] = el.innerHTML;
+    });
+    // Save full card HTML for each card (by position)
+    data['__cards'] = JSON.stringify(cards().map(c => c.innerHTML));
+    localStorage.setItem(STORE, JSON.stringify(data));
+    showToast('✓ Guardado');
+  } catch(e) {
+    showToast('⚠ Error al guardar');
+  }
 }
 
 function enforceFixedPosition() {
@@ -365,27 +369,32 @@ function enforceFixedPosition() {
 }
 
 function loadAll() {
-  const raw = localStorage.getItem(STORE);
-  if (!raw) { enforceFixedPosition(); return; }
-  const data = JSON.parse(raw);
-  // Only restore individual text edits, never reorder cards from saved state
-  // Card order is always driven by drag & drop in the current session
-  if (data['__order']) {
-    const order = JSON.parse(data['__order']);
-    movableCards().forEach((c, i) => {
-      if (!order[i]) return;
-      c.querySelector('.day-meta').innerHTML = order[i].meta;
-      c.querySelector('.activities').innerHTML = order[i].acts;
-      c.querySelectorAll('.del-btn').forEach(b => b.onclick = () => delItem(b));
-      const tip = c.querySelector('.tip');
-      if (tip && order[i].tip) tip.innerHTML = order[i].tip;
-    });
+  try {
+    const raw = localStorage.getItem(STORE);
+    if (!raw) { enforceFixedPosition(); return; }
+    const data = JSON.parse(raw);
+    if (data['__cards']) {
+      const saved = JSON.parse(data['__cards']);
+      const allCards = cards();
+      allCards.forEach((c, i) => {
+        if (!saved[i]) return;
+        c.innerHTML = saved[i];
+        // Re-wire event handlers lost after innerHTML replace
+        c.querySelectorAll('.del-btn').forEach(b => b.onclick = () => delItem(b));
+        c.querySelectorAll('.add-btn').forEach(b => b.onclick = () => addItem(b));
+        const handle = c.querySelector('.drag-handle');
+        // handlers re-attach via event delegation on list, no action needed
+      });
+    }
+    enforceFixedPosition();
+  } catch(e) {
+    console.warn('Error loading saved data:', e);
+    enforceFixedPosition();
   }
-  enforceFixedPosition();
 }
 
 document.addEventListener('input', e => {
-  if (e.target.hasAttribute('data-key')) scheduleSave();
+  if (e.target.isContentEditable) scheduleSave();
 });
 
 /* ════════════════════════════════════════
