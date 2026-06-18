@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Viaje a Milán · Sep 2025</title>
@@ -93,6 +92,10 @@
   .stat-value{font-size:14px;font-weight:500;line-height:1.4;}
   .section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px;}
 
+  .export-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 1rem;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .export-bar span{font-size:12px;color:var(--muted);}
+  .export-btn{display:flex;align-items:center;gap:6px;background:var(--blue-600);color:white;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0;}
+  .export-btn:hover{background:var(--blue-800);}
   .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#1a1a18;color:white;font-size:13px;padding:8px 18px;border-radius:20px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9999;white-space:nowrap;}
   .toast.show{opacity:1;}
 </style>
@@ -104,12 +107,12 @@
 
 <div class="header">
   <div class="header-eyebrow">Planificador de viaje</div>
-  <h1 contenteditable="false" data-key="titulo">Milán y alrededores</h1>
-  <div class="header-sub" contenteditable="false" data-key="subtitulo">1 – 6 septiembre 2025 · Vuelos desde Bérgamo</div>
+  <h1 contenteditable="true" data-key="titulo">Milán y alrededores</h1>
+  <div class="header-sub" contenteditable="true" data-key="subtitulo">1 – 6 septiembre 2025 · Vuelos desde Bérgamo</div>
   <div class="pills">
-    <span class="pill" contenteditable="false" data-key="pill1">✈ Llega mar 1 sept</span>
-    <span class="pill" contenteditable="false" data-key="pill2">🏨 Base en Milán</span>
-    <span class="pill" contenteditable="false" data-key="pill3">✈ Sale dom 6 sept</span>
+    <span class="pill" contenteditable="true" data-key="pill1">✈ Llega mar 1 sept</span>
+    <span class="pill" contenteditable="true" data-key="pill2">🏨 Base en Milán</span>
+    <span class="pill" contenteditable="true" data-key="pill3">✈ Sale dom 6 sept</span>
   </div>
 </div>
 
@@ -123,174 +126,176 @@
   </div>
 </div>
 
+
+
 <div id="dias" class="section active">
 
-  <div class="day-card fixed-card">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<div class="day-card fixed-card">
     <div class="day-header">
       <div class="day-circle" style="background:var(--blue-50);color:var(--blue-600);">1</div>
       <div class="day-meta">
-        <h3 contenteditable="false" data-key="d1t">Martes 1 sept — Llegada a Milán</h3>
-        <p contenteditable="false" data-key="d1s">Vuelo llega a BGY · Traslado a Milán</p>
+        <h3 contenteditable="true" data-key="d1t">Martes 1 sept — Llegada a Milán</h3>
+        <p contenteditable="true" data-key="d1s">Vuelo llega a BGY · Traslado a Milán</p>
         <span class="badge" style="background:var(--blue-50);color:var(--blue-600);">✈ Llegada</span>
       </div>
       <div class="drag-handle" title="Mantén pulsado para arrastrar">⠿</div>
     </div>
     <ul class="activities">
-      <li><span class="act-icon">🚌</span><span contenteditable="false" data-key="d1a1">Bus Orio al Serio → Milán Central (Terravision o Autostradale, ~1h)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🏨</span><span contenteditable="false" data-key="d1a2">Check-in en el hotel y descanso</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚶</span><span contenteditable="false" data-key="d1a3">Paseo por el Navigli o zona centro para ambientarse</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🍝</span><span contenteditable="false" data-key="d1a4">Cena en la zona de los Navigli</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚌</span><span contenteditable="true" data-key="d1a1">Bus Orio al Serio → Milán Central (Terravision o Autostradale, ~1h)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🏨</span><span contenteditable="true" data-key="d1a2">Check-in en el hotel y descanso</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚶</span><span contenteditable="true" data-key="d1a3">Paseo por el Navigli o zona centro para ambientarse</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🍝</span><span contenteditable="true" data-key="d1a4">Cambio</span><button class="del-btn" onclick="delItem(this)">×</button></li>
     </ul>
     <button class="add-btn" onclick="addItem(this)">+ Añadir actividad</button>
-  </div>
-
-  <div class="day-card">
+  </div><div class="day-card">
     <div class="day-header">
       <div class="day-circle" style="background:var(--green-50);color:var(--green-600);">2</div>
       <div class="day-meta">
-        <h3 contenteditable="false" data-key="d2t">Miércoles 2 sept — Lago Como</h3>
-        <p contenteditable="false" data-key="d2s">Excursión desde Milán (~1h en tren)</p>
+        <h3 contenteditable="true" data-key="d2t">Miércoles 2 sept — Lago Como</h3>
+        <p contenteditable="true" data-key="d2s">Excursión desde Milán (~1h en tren)</p>
         <span class="badge" style="background:var(--green-50);color:var(--green-600);">🌊 Excursión</span>
       </div>
       <div class="drag-handle" title="Mantén pulsado para arrastrar">⠿</div>
     </div>
     <ul class="activities">
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d2a1">Tren Milán Central → Como S. Giovanni (35–50 min)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">⛴</span><span contenteditable="false" data-key="d2a2">Ferry por el lago: Como → Varenna o Bellagio</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">📸</span><span contenteditable="false" data-key="d2a3">Paseo por Bellagio y vistas al lago</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d2a4">Regreso a Milán por la tarde-noche</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d2a1">Tren Milán Central → Como S. Giovanni (35–50 min)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">⛴</span><span contenteditable="true" data-key="d2a2">Ferry por el lago: Como → Varenna o Bellagio</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">📸</span><span contenteditable="true" data-key="d2a3">Paseo por Bellagio y vistas al lago</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d2a4">Regreso a Milán por la tarde-noche</span><button class="del-btn" onclick="delItem(this)">×</button></li>
     </ul>
     <button class="add-btn" onclick="addItem(this)">+ Añadir actividad</button>
-    <div class="tip"><span class="tip-icon">💡</span><span contenteditable="false" data-key="d2tip">Compra el abono ferry del día (~18 €) para moverte libremente entre pueblos del lago</span></div>
-  </div>
-
-  <div class="day-card">
+    <div class="tip"><span class="tip-icon">💡</span><span contenteditable="true" data-key="d2tip">Compra el abono ferry del día (~18 €) para moverte libremente entre pueblos del lago</span></div>
+  </div><div class="day-card">
     <div class="day-header">
       <div class="day-circle" style="background:var(--pink-50);color:var(--pink-600);">3</div>
       <div class="day-meta">
-        <h3 contenteditable="false" data-key="d3t">Jueves 3 sept — Milán</h3>
-        <p contenteditable="false" data-key="d3s">Día completo en la ciudad</p>
+        <h3 contenteditable="true" data-key="d3t">Jueves 3 sept — Milán</h3>
+        <p contenteditable="true" data-key="d3s">Día completo en la ciudad</p>
         <span class="badge" style="background:var(--pink-50);color:var(--pink-600);">🏛 Ciudad</span>
       </div>
       <div class="drag-handle" title="Mantén pulsado para arrastrar">⠿</div>
     </div>
     <ul class="activities">
-      <li><span class="act-icon">⛪</span><span contenteditable="false" data-key="d3a1">Duomo de Milán y azotea (reserva online con antelación)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🏛</span><span contenteditable="false" data-key="d3a2">Galleria Vittorio Emanuele II</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🖼</span><span contenteditable="false" data-key="d3a3">La Última Cena de Da Vinci (reserva obligatoria, meses antes)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🛍</span><span contenteditable="false" data-key="d3a4">Brera o zona Porta Ticinese</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">⛪</span><span contenteditable="true" data-key="d3a1">Duomo de Milán y azotea (reserva online con antelación)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🏛</span><span contenteditable="true" data-key="d3a2">Galleria Vittorio Emanuele II</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🖼</span><span contenteditable="true" data-key="d3a3">La Última Cena de Da Vinci (reserva obligatoria, meses antes)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🛍</span><span contenteditable="true" data-key="d3a4">Brera o zona Porta Ticinese</span><button class="del-btn" onclick="delItem(this)">×</button></li>
     </ul>
     <button class="add-btn" onclick="addItem(this)">+ Añadir actividad</button>
-    <div class="tip"><span class="tip-icon">⚠️</span><span contenteditable="false" data-key="d3tip">La Última Cena se agota con meses de antelación — resérvala ya en vivaticket.com</span></div>
-  </div>
-
-  <div class="day-card">
+    <div class="tip"><span class="tip-icon">⚠️</span><span contenteditable="true" data-key="d3tip">La Última Cena se agota con meses de antelación — resérvala ya en vivaticket.com</span></div>
+  </div><div class="day-card">
     <div class="day-header">
       <div class="day-circle" style="background:var(--amber-50);color:var(--amber-600);">4</div>
       <div class="day-meta">
-        <h3 contenteditable="false" data-key="d4t">Viernes 4 sept — Verona</h3>
-        <p contenteditable="false" data-key="d4s">Excursión desde Milán (~1h 20 en tren)</p>
+        <h3 contenteditable="true" data-key="d4t">Viernes 4 sept — Verona</h3>
+        <p contenteditable="true" data-key="d4s">Excursión desde Milán (~1h 20 en tren)</p>
         <span class="badge" style="background:var(--amber-50);color:var(--amber-600);">❤ Excursión</span>
       </div>
       <div class="drag-handle" title="Mantén pulsado para arrastrar">⠿</div>
     </div>
     <ul class="activities">
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d4a1">Tren alta velocidad Milán → Verona (~1h 20 min)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🏟</span><span contenteditable="false" data-key="d4a2">Arena di Verona</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">📍</span><span contenteditable="false" data-key="d4a3">Balcón de Julieta y casco histórico</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🏰</span><span contenteditable="false" data-key="d4a4">Castelvecchio y el río Adige</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d4a5">Regreso a Milán</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d4a1">Tren alta velocidad Milán → Verona (~1h 20 min)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🏟</span><span contenteditable="true" data-key="d4a2">Arena di Verona</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">📍</span><span contenteditable="true" data-key="d4a3">Balcón de Julieta y casco histórico</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🏰</span><span contenteditable="true" data-key="d4a4">Castelvecchio y el río Adige</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d4a5">Regreso a Milán</span><button class="del-btn" onclick="delItem(this)">×</button></li>
     </ul>
     <button class="add-btn" onclick="addItem(this)">+ Añadir actividad</button>
-  </div>
-
-  <div class="day-card">
+  </div><div class="day-card">
     <div class="day-header">
       <div class="day-circle" style="background:var(--purple-50);color:var(--purple-600);">5</div>
       <div class="day-meta">
-        <h3 contenteditable="false" data-key="d5t">Sábado 5 sept — Venecia</h3>
-        <p contenteditable="false" data-key="d5s">Excursión desde Milán (~2h 30 en tren)</p>
+        <h3 contenteditable="true" data-key="d5t">Sábado 5 sept — Venecia</h3>
+        <p contenteditable="true" data-key="d5s">Excursión desde Milán (~2h 30 en tren)</p>
         <span class="badge" style="background:var(--purple-50);color:var(--purple-600);">🌊 Excursión</span>
       </div>
       <div class="drag-handle" title="Mantén pulsado para arrastrar">⠿</div>
     </div>
     <ul class="activities">
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d5a1">Tren Milán → Venezia Santa Lucia (2h 20 – 2h 40)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">⛴</span><span contenteditable="false" data-key="d5a2">Vaporetto por el Canal Grande</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🏛</span><span contenteditable="false" data-key="d5a3">Plaza de San Marcos y Basílica</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚶</span><span contenteditable="false" data-key="d5a4">Rialto y callejuelas — perderse es el plan</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d5a5">Tren de vuelta: salir antes de las 18h</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d5a1">Tren Milán → Venezia Santa Lucia (2h 20 – 2h 40)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">⛴</span><span contenteditable="true" data-key="d5a2">Vaporetto por el Canal Grande</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🏛</span><span contenteditable="true" data-key="d5a3">Plaza de San Marcos y Basílica</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚶</span><span contenteditable="true" data-key="d5a4">Rialto y callejuelas — perderse es el plan</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d5a5">Tren de vuelta: salir antes de las 18h</span><button class="del-btn" onclick="delItem(this)">×</button></li>
     </ul>
     <button class="add-btn" onclick="addItem(this)">+ Añadir actividad</button>
-    <div class="tip"><span class="tip-icon">💡</span><span contenteditable="false" data-key="d5tip">Madrugar compensa — Venecia en verano está masificada desde las 10h</span></div>
-  </div>
-
-  <div class="day-card fixed-card">
+    <div class="tip"><span class="tip-icon">💡</span><span contenteditable="true" data-key="d5tip">Madrugar compensa — Venecia en verano está masificada desde las 10h</span></div>
+  </div><div class="day-card fixed-card">
     <div class="day-header">
       <div class="day-circle" style="background:var(--coral-50);color:var(--coral-600);">6</div>
       <div class="day-meta">
-        <h3 contenteditable="false" data-key="d6t">Domingo 6 sept — Bérgamo + Vuelo</h3>
-        <p contenteditable="false" data-key="d6s">Última parada antes del vuelo</p>
+        <h3 contenteditable="true" data-key="d6t">Domingo 6 sept — Bérgamo + Vuelo</h3>
+        <p contenteditable="true" data-key="d6s">Última parada antes del vuelo</p>
         <span class="badge" style="background:var(--coral-50);color:var(--coral-600);">✈ Último día</span>
       </div>
       <div class="drag-handle" title="Mantén pulsado para arrastrar">⠿</div>
     </div>
     <ul class="activities">
-      <li><span class="act-icon">🧳</span><span contenteditable="false" data-key="d6a1">Check-out y maletas en consigna del hotel</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚆</span><span contenteditable="false" data-key="d6a2">Tren Milán → Bérgamo (~50 min, desde Garibaldi)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🏰</span><span contenteditable="false" data-key="d6a3">Città Alta: murallas venecianas y Piazza Vecchia</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">🚡</span><span contenteditable="false" data-key="d6a4">Funicular desde la ciudad baja</span><button class="del-btn" onclick="delItem(this)">×</button></li>
-      <li><span class="act-icon">✈</span><span contenteditable="false" data-key="d6a5">Traslado al aeropuerto BGY (5 min del centro)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🧳</span><span contenteditable="true" data-key="d6a1">Check-out y maletas en consigna del hotel</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚆</span><span contenteditable="true" data-key="d6a2">Tren Milán → Bérgamo (~50 min, desde Garibaldi)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🏰</span><span contenteditable="true" data-key="d6a3">Città Alta: murallas venecianas y Piazza Vecchia</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">🚡</span><span contenteditable="true" data-key="d6a4">Funicular desde la ciudad baja</span><button class="del-btn" onclick="delItem(this)">×</button></li>
+      <li><span class="act-icon">✈</span><span contenteditable="true" data-key="d6a5">Traslado al aeropuerto BGY (5 min del centro)</span><button class="del-btn" onclick="delItem(this)">×</button></li>
     </ul>
     <button class="add-btn" onclick="addItem(this)">+ Añadir actividad</button>
-    <div class="tip"><span class="tip-icon">⚠️</span><span contenteditable="false" data-key="d6tip">BGY está a solo 5 min en bus o taxi del centro de Bérgamo</span></div>
-  </div>
-
-</div>
+    <div class="tip"><span class="tip-icon">⚠️</span><span contenteditable="true" data-key="d6tip">BGY está a solo 5 min en bus o taxi del centro de Bérgamo</span></div>
+  </div></div>
 
 <!-- ALOJAMIENTO -->
 <div id="aloj" class="section">
   <div class="section-title">Alojamiento en Milán</div>
   <div class="info-card">
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">📍</span><div><strong contenteditable="false" data-key="aloj1t">Zona recomendada: Centrale / Porta Venezia</strong><span contenteditable="false" data-key="aloj1s">Cerca de trenes para excursiones, bien comunicada con metro</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">🗺</span><div><strong contenteditable="false" data-key="aloj2t">Alternativa: Navigli</strong><span contenteditable="false" data-key="aloj2s">Ambiente nocturno, más bohemio, metro disponible</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">📅</span><div><strong contenteditable="false" data-key="aloj3t">5 noches — mar 1 al dom 6 sept</strong><span contenteditable="false" data-key="aloj3s">Check-in martes tarde, check-out domingo mañana</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">🧳</span><div><strong contenteditable="false" data-key="aloj4t">Consigna el último día</strong><span contenteditable="false" data-key="aloj4s">Muchos hoteles guardan maletas el día de salida sin coste</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">📍</span><div><strong contenteditable="true" data-key="aloj1t">Zona recomendada: Centrale / Porta Venezia</strong><span contenteditable="true" data-key="aloj1s">Cerca de trenes para excursiones, bien comunicada con metro</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">🗺</span><div><strong contenteditable="true" data-key="aloj2t">Alternativa: Navigli</strong><span contenteditable="true" data-key="aloj2s">Ambiente nocturno, más bohemio, metro disponible</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">📅</span><div><strong contenteditable="true" data-key="aloj3t">5 noches — mar 1 al dom 6 sept</strong><span contenteditable="true" data-key="aloj3s">Check-in martes tarde, check-out domingo mañana</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">🧳</span><div><strong contenteditable="true" data-key="aloj4t">Consigna el último día</strong><span contenteditable="true" data-key="aloj4s">Muchos hoteles guardan maletas el día de salida sin coste</span></div></div>
   </div>
-  <div class="tip" style="border-radius:var(--radius);border:1px solid var(--border);"><span class="tip-icon">💡</span><span contenteditable="false" data-key="aloj_tip">Prioriza hoteles cerca de Milán Centrale o Porta Garibaldi para salir rápido en tren</span></div>
+  <div class="tip" style="border-radius:var(--radius);border:1px solid var(--border);"><span class="tip-icon">💡</span><span contenteditable="true" data-key="aloj_tip">Prioriza hoteles cerca de Milán Centrale o Porta Garibaldi para salir rápido en tren</span></div>
 </div>
 
 <!-- TRANSPORTE -->
 <div id="trans" class="section">
   <div class="section-title">Cómo moverte</div>
   <div class="transport-card">
-    <div class="transport-row"><span class="t-icon">✈</span><div class="t-info"><strong contenteditable="false" data-key="tr1t">Llegada BGY → Milán</strong><span contenteditable="false" data-key="tr1s">Bus Terravision / Autostradale · ~1h · ~5–10 €</span></div></div>
-    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="false" data-key="tr2t">Milán → Lago Como</strong><span contenteditable="false" data-key="tr2s">Trenitalia desde Centrale · 35–50 min · ~5 €</span></div></div>
-    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="false" data-key="tr3t">Milán → Verona</strong><span contenteditable="false" data-key="tr3s">Italo / Frecciarossa · ~1h 20 min · desde 15 €</span></div></div>
-    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="false" data-key="tr4t">Milán → Venecia</strong><span contenteditable="false" data-key="tr4s">Frecciarossa · ~2h 30 min · desde 20 €</span></div></div>
-    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="false" data-key="tr5t">Milán → Bérgamo</strong><span contenteditable="false" data-key="tr5s">Trenord desde Garibaldi · ~50 min · ~5 €</span></div></div>
-    <div class="transport-row"><span class="t-icon">🚌</span><div class="t-info"><strong contenteditable="false" data-key="tr6t">Bérgamo centro → Aeropuerto BGY</strong><span contenteditable="false" data-key="tr6s">Bus / taxi · 5 min · muy cerca</span></div></div>
+    <div class="transport-row"><span class="t-icon">✈</span><div class="t-info"><strong contenteditable="true" data-key="tr1t">Llegada BGY → Milán</strong><span contenteditable="true" data-key="tr1s">Bus Terravision / Autostradale · ~1h · ~5–10 €</span></div></div>
+    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="true" data-key="tr2t">Milán → Lago Como</strong><span contenteditable="true" data-key="tr2s">Trenitalia desde Centrale · 35–50 min · ~5 €</span></div></div>
+    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="true" data-key="tr3t">Milán → Verona</strong><span contenteditable="true" data-key="tr3s">Italo / Frecciarossa · ~1h 20 min · desde 15 €</span></div></div>
+    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="true" data-key="tr4t">Milán → Venecia</strong><span contenteditable="true" data-key="tr4s">Frecciarossa · ~2h 30 min · desde 20 €</span></div></div>
+    <div class="transport-row"><span class="t-icon">🚆</span><div class="t-info"><strong contenteditable="true" data-key="tr5t">Milán → Bérgamo</strong><span contenteditable="true" data-key="tr5s">Trenord desde Garibaldi · ~50 min · ~5 €</span></div></div>
+    <div class="transport-row"><span class="t-icon">🚌</span><div class="t-info"><strong contenteditable="true" data-key="tr6t">Bérgamo centro → Aeropuerto BGY</strong><span contenteditable="true" data-key="tr6s">Bus / taxi · 5 min · muy cerca</span></div></div>
   </div>
-  <div class="tip" style="border-radius:var(--radius);border:1px solid var(--border);"><span class="tip-icon">🎟</span><span contenteditable="false" data-key="trans_tip">Compra trenes con antelación en trenitalia.com o italotreno.it — los precios suben mucho en verano</span></div>
+  <div class="tip" style="border-radius:var(--radius);border:1px solid var(--border);"><span class="tip-icon">🎟</span><span contenteditable="true" data-key="trans_tip">Compra trenes con antelación en trenitalia.com o italotreno.it — los precios suben mucho en verano</span></div>
 </div>
 
 <!-- CONSEJOS -->
 <div id="consejos" class="section">
   <div class="section-title">Datos prácticos</div>
   <div class="stats-grid">
-    <div class="stat-card"><div class="stat-label">Moneda</div><div class="stat-value" contenteditable="false" data-key="c1">Euro · tarjeta aceptada en todos lados</div></div>
-    <div class="stat-card"><div class="stat-label">Clima sept</div><div class="stat-value" contenteditable="false" data-key="c2">22–28°C · posibles tormentas tarde</div></div>
-    <div class="stat-card"><div class="stat-label">Conectividad</div><div class="stat-value" contenteditable="false" data-key="c3">SIM italiana o eSIM Europa</div></div>
-    <div class="stat-card"><div class="stat-label">Museos</div><div class="stat-value" contenteditable="false" data-key="c4">Muchos cierran los lunes</div></div>
+    <div class="stat-card"><div class="stat-label">Moneda</div><div class="stat-value" contenteditable="true" data-key="c1">Euro · tarjeta aceptada en todos lados</div></div>
+    <div class="stat-card"><div class="stat-label">Clima sept</div><div class="stat-value" contenteditable="true" data-key="c2">22–28°C · posibles tormentas tarde</div></div>
+    <div class="stat-card"><div class="stat-label">Conectividad</div><div class="stat-value" contenteditable="true" data-key="c3">SIM italiana o eSIM Europa</div></div>
+    <div class="stat-card"><div class="stat-label">Museos</div><div class="stat-value" contenteditable="true" data-key="c4">Muchos cierran los lunes</div></div>
   </div>
   <div class="section-title">Reservas importantes</div>
   <div class="info-card">
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">🎟</span><div><strong contenteditable="false" data-key="cons1t">La Última Cena (Da Vinci)</strong><span contenteditable="false" data-key="cons1s">Reserva obligatoria con meses de antelación en vivaticket.com</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">⛪</span><div><strong contenteditable="false" data-key="cons2t">Duomo de Milán</strong><span contenteditable="false" data-key="cons2s">Reserva online para evitar largas colas</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">📱</span><div><strong contenteditable="false" data-key="cons3t">App Trenitalia</strong><span contenteditable="false" data-key="cons3s">Billetes de tren al momento desde el móvil</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">👟</span><div><strong contenteditable="false" data-key="cons4t">Calzado cómodo</strong><span contenteditable="false" data-key="cons4s">Venecia y Bérgamo alta tienen mucho pavimento irregular</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">💧</span><div><strong contenteditable="false" data-key="cons5t">Agua del grifo</strong><span contenteditable="false" data-key="cons5s">Potable en toda Italia, ahorra en botellas</span></div></div>
-    <div class="info-row"><span style="font-size:20px;flex-shrink:0">☕</span><div><strong contenteditable="false" data-key="cons6t">Café en barra</strong><span contenteditable="false" data-key="cons6s">Siempre más barato que sentado — costumbre italiana</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">🎟</span><div><strong contenteditable="true" data-key="cons1t">La Última Cena (Da Vinci)</strong><span contenteditable="true" data-key="cons1s">Reserva obligatoria con meses de antelación en vivaticket.com</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">⛪</span><div><strong contenteditable="true" data-key="cons2t">Duomo de Milán</strong><span contenteditable="true" data-key="cons2s">Reserva online para evitar largas colas</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">📱</span><div><strong contenteditable="true" data-key="cons3t">App Trenitalia</strong><span contenteditable="true" data-key="cons3s">Billetes de tren al momento desde el móvil</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">👟</span><div><strong contenteditable="true" data-key="cons4t">Calzado cómodo</strong><span contenteditable="true" data-key="cons4s">Venecia y Bérgamo alta tienen mucho pavimento irregular</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">💧</span><div><strong contenteditable="true" data-key="cons5t">Agua del grifo</strong><span contenteditable="true" data-key="cons5s">Potable en toda Italia, ahorra en botellas</span></div></div>
+    <div class="info-row"><span style="font-size:20px;flex-shrink:0">☕</span><div><strong contenteditable="true" data-key="cons6t">Café en barra</strong><span contenteditable="true" data-key="cons6s">Siempre más barato que sentado — costumbre italiana</span></div></div>
   </div>
 </div>
 
@@ -577,7 +582,51 @@ function cleanupDrag(moved) {
   ghost.innerHTML = '';
 }
 
-loadAll();
+/* ─── EXPORT & OPEN GITHUB ─── */
+function exportAndOpenGitHub() {
+  // 1. Build a clean HTML snapshot with current content baked in
+  const clone = document.documentElement.cloneNode(true);
+
+  // Remove the export bar from the exported file (not needed offline)
+  const exportBar = clone.querySelector('.export-bar');
+  if (exportBar) exportBar.remove();
+
+  // Bake current content into the clone's editable elements
+  const liveEditables = document.querySelectorAll('[contenteditable]');
+  const cloneEditables = clone.querySelectorAll('[contenteditable]');
+  liveEditables.forEach((el, i) => {
+    if (cloneEditables[i]) cloneEditables[i].innerHTML = el.innerHTML;
+  });
+
+  // Bake current card order into the clone
+  const liveCards = document.querySelectorAll('#dias .day-card');
+  const cloneDias = clone.querySelector('#dias');
+  if (cloneDias) {
+    // Remove existing cards from clone
+    cloneDias.querySelectorAll('.day-card').forEach(c => c.remove());
+    // Append cards in current live order
+    liveCards.forEach(lc => {
+      const cc = lc.cloneNode(true);
+      cloneDias.appendChild(cc);
+    });
+  }
+
+  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  const blob = new Blob([html], {type: 'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'index.html';
+  a.click();
+  URL.revokeObjectURL(url);
+
+  // 2. Open GitHub upload page after a short delay
+  setTimeout(() => {
+    window.open('https://github.com/mburbanot/viaje/upload/main', '_blank');
+  }, 1000);
+
+  showToast('⬇ Descargando... abre GitHub en un momento');
+}
 // Always editable
 document.querySelectorAll('[contenteditable]').forEach(el => el.contentEditable = 'true');
 
@@ -600,5 +649,6 @@ document.querySelectorAll('[contenteditable]').forEach(el => el.contentEditable 
   } catch(e) { localStorage.removeItem(STORE); }
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
